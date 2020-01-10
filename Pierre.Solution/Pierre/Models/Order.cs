@@ -1,33 +1,27 @@
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace Pierre.Models
 {
-    public class Order
-    {
-        private static List<Order> _instances = new List<Orde> {};
-        public string Name { get; set; }
-        public int Id { get; }
-        public List<Vendor> Vendors { get; set; }
-   
-        public Order(string orderName)
-        {   
-            Name = orderName;
-            _instances.Add(this);
-            Id = _instances.Count;
-            Vendor = new List<Vendor> {};
-        }
+  public class Vendor
+  {
+    public string Description { get; set; }
+    public int Id { get; }
+    private static List<Vendor> _instances = new List<Vendor> {};
 
-        public static List<Category> GetAll()
-        {
-            return _instances;
-        }
-         public static Category Find(int searchId)
-        {
-            return _instances[searchId-1];
-        }
-         public void AddItem(Item item)
-        {
-            Items.Add(item);
-        }
-    }       
+    public Vendor(string description)
+    {
+        Description = description;
+        _instances.Add(this);
+        Id = _instances.Count;
+    }
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
+    }
+    public static Vendor Find(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
+  }
 }

@@ -1,0 +1,15 @@
+@using Pierre.Models;
+
+<h1>Orders</h1>
+
+@If (Model.Count == 0)
+{
+    <p>No orders have been added<p>
+}
+
+@foreach (Order order in Model)
+{
+    <h3><a href='/orders/@order.Id'>@order.Name</a></h3>
+}
+
+<p><a href='/'>Back home</a></p>
