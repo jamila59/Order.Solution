@@ -6,7 +6,7 @@ namespace Pierre.Controllers
 {
   public class OrderController : Controller
   {
-    [HttpGet("/orders/{orderId}/items/new")] // returns list of all Orders
+    [HttpGet("/vendor/{vendorId}/orders/new")] // returns list of all Orders
     public ActionResult New(int orderId)
     {
       Order order = Order.Find(orderId);
@@ -14,7 +14,7 @@ namespace Pierre.Controllers
     }
 
    
-    [HttpGet("/orders/{orderId}/vendors/{vendorId}")] // redirects to form 
+    [HttpGet("/vendor/{vendorId}/orders/{orderId}")] // redirects to form 
     public ActionResult Show(int vendorId, int orderId)
     {
       Order order = Order.Find(orderId);
