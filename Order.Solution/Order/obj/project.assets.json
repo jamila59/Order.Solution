@@ -12081,11 +12081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/Order.Solution/Order/Order.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/Order.Solution/Order.Solution/Order/Order.csproj",
       "projectName": "Order",
-      "projectPath": "/Users/Guest/Desktop/Order.Solution/Order/Order.csproj",
+      "projectPath": "/Users/Guest/Desktop/Order.Solution/Order.Solution/Order/Order.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/Order.Solution/Order/obj/",
+      "outputPath": "/Users/Guest/Desktop/Order.Solution/Order.Solution/Order/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
