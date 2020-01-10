@@ -7,10 +7,10 @@ namespace Pierre.Controllers
   public class OrderController : Controller
   {
     [HttpGet("/vendor/{vendorId}/orders/new")] // returns list of all Orders
-    public ActionResult New(int orderId)
+    public ActionResult New(int vendorId)
     {
-      Order order = Order.Find(orderId);
-      return View(order);
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
    
