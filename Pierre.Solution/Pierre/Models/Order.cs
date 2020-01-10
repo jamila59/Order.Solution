@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 namespace Pierre.Models
 {
-  public class Vendor
+  public class Order
   {
     public string Description { get; set; }
     public int Id { get; }
-    private static List<Vendor> _instances = new List<Vendor> {};
+    private static List<Order> _instances = new List<Order> {};
 
-    public Vendor(string description)
+    public Order(string description)
     {
         Description = description;
         _instances.Add(this);
         Id = _instances.Count;
     }
-    public static List<Vendor> GetAll()
+    public static List<Order> GetAll()
     {
       return _instances;
     }
-    public static Vendor Find(int searchId)
+    public static Order Find(int searchId)
     {
       return _instances[searchId - 1];
     }

@@ -1,35 +1,41 @@
+using System.Collections.Generic;
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Pierre.Models;
-using System.Collections.Generic;
 
 namespace Pierre.Controllers
 {
-  public class VendorController : Controller
-  {
-    [HttpGet("/vendors")] // returns list of all vendors
-    public ActionResult Index()
+    public class VendorController : Controller
     {
-      List<Vendor> allVendors = Vendor.GetAll();
-      return View(allVendors);
-    }
-    
-    [HttpGet("/vendors/new")] // redirects to form 
-    public ActionResult New()
-    {
-      return View();
-    }
+        [HttpGet("vendors")]
+        public ActionResult Index()
+        {
+            List<Vendor> allVendors = Vendor.GetAll();
+            return View(allVendors);
+        }
+        
+        [HttpGet("/vendors/new")]
+        public ActionResult New()
+        { 
+         return View();
+        }
 
-    [HttpPost("/vendors")] // redirects to form 
-    public ActionResult Create(string description)
-    {
-      Vendor myVendor = new Vendor(description);
-      return RedirectToAction("Index");
+        [HttpPost("/vendors")]
+        public ActionResult Create(string vendorName)
+        {
+            Vendor newvendor = new Vendor(vendorName);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("/vendors/{id}")]
+        public ActionResult Show(int id)
+        {
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            Vendor selectedVendor = Vendor.Find(id);
+            List<Order> vendorOrders = selectedVendor.Orders;
+            model.Add("vendor", selectedVendor);
+            model.Add("order", vendorOrders);
+            return View(model);
+        }
     }
-    [HttpGet("/vendors/{id}")]
-    public ActionResult Show(int id)
-    {
-      Vendor foundVendor = Vendor.Find(id);
-      return View(foundVendor);
-    }
-  }
-}  
+}

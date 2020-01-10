@@ -23,3 +23,6 @@
 /Users/Guest/Desktop/Pierre.Solution/Pierre.Solution/Pierre/obj/Debug/netcoreapp2.2/Pierre.pdb
 /Users/Guest/Desktop/Pierre.Solution/Pierre.Solution/Pierre/obj/Debug/netcoreapp2.2/Pierre.csproj.CopyComplete
 /Users/Guest/Desktop/Pierre.Solution/Pierre.Solution/Pierre/obj/Debug/netcoreapp2.2/Razor/Views/Vendor/New.g.cshtml.cs
+/Users/Guest/Desktop/Pierre.Solution/Pierre.Solution/Pierre/obj/Debug/netcoreapp2.2/Razor/Views/Order/New.g.cshtml.cs
+/Users/Guest/Desktop/Pierre.Solution/Pierre.Solution/Pierre/obj/Debug/netcoreapp2.2/Razor/Views/Order/Show.g.cshtml.cs
+/Users/Guest/Desktop/Pierre.Solution/Pierre.Solution/Pierre/obj/Debug/netcoreapp2.2/Razor/Views/Vendor/Show.g.cshtml.cs

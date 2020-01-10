@@ -1,47 +1,28 @@
-using System.Collections.Generic;
-using System;
 using Microsoft.AspNetCore.Mvc;
 using Pierre.Models;
+using System.Collections.Generic;
 
 namespace Pierre.Controllers
 {
-    public class OrderController : Controller
+  public class OrderController : Controller
+  {
+    [HttpGet("/orders/{orderId}/items/new")] // returns list of all Orders
+    public ActionResult New(int orderId)
     {
-        [HttpGet("orders")]
-        public ActionResult Index()
-        {
-            List<Order> allOrders = Order.GetAll();
-            return View(allOrders);
-        }
-        
-        [HttpGet("/orders/new")]
-        public ActionResult New()
-        { 
-         return View();
-        }
-
-        [HttpPost("/orders")]
-        public ActionResult Create(string orderName)
-        {
-            Order newOrder = new Order(orderName);
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet("/orders/{id}")]
-        public ActionResult Show(int id)
-        {
-        Dictionary<string, object> model = new Dictionary<string, object>();
-
-        Order selectedOrder = Order.Find(id);
-        List<Vendor> vendorList = selectedCategory.;
-
-        model.Add("vendor", );
-        model.Add("orders", );
-        return View(model);
-        }
+      Order order = Order.Find(orderId);
+      return View(order);
     }
-}
 
-      Order selectedOrder = Order.Find(id);
-      List<Vendor> listVendors = selectedOrder.Items;
-      model.Add("category", selectedCategory);
+   
+    [HttpGet("/orders/{orderId}/vendors/{vendorId}")] // redirects to form 
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
+    }
+  }
+}  

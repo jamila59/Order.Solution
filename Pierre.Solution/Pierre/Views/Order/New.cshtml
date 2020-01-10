@@ -1,11 +1,8 @@
-<h1>Add an order</h1>
-<p>Add an order here:</p>
+<h1>Add a new order to @Model.Name</h1>
 
-<form action="/orders" method="post">
-  <label for="orderName">Category name</label>
-  <input id="orderName" name="orderName" type="text">
-  <button type="submit">Add</button>
+<form action="/categories/@Model.Id/orders" method="post">
+  <input id="categoryId" name="categoryId" type="hidden" value="@Model.Id">
+  <label for="orderDescription">Order Description</label>
+  <input id="orderDescription" name="orderDescription" type="text">
+  <button type='submit'>Add order</button>
 </form>
-
-<p><a href="/">Back home</a></p>
-<p><a href="/categories">Back to categories.</a></p>
